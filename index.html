@@ -18,7 +18,9 @@
     </div>
     <div class="meet-area">
         <!-- Remote Video Element-->
-        <video id="remote-video"></video>
+        <div id="remote-video">
+
+        </div>
 
         <!-- Local Video Element-->
         <video id="local-video"></video>
@@ -27,6 +29,12 @@
         </div>
     </div>
 </body>
+
+<style>
+    #remote-video video{
+        width: 22rem;
+    }
+</style>
 
 <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
 <script src="script.js"></script>
