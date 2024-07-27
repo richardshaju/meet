@@ -9,6 +9,10 @@ app.use(express.json());
 // In-memory store for rooms and peers
 const rooms = {};
 
+app.get('/', (req, res) => {
+    res.send("Meet Api v1.0")
+})
+
 // Register a peer in a room
 app.post('/register-peer', (req, res) => {
     const { roomId, peerId } = req.query;
