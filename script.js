@@ -188,17 +188,17 @@ function stopScreenSharing() {
 }
 
 function registerPeer(roomId, peerId) {
-    return fetch(`http://localhost:3000/register-peer?roomId=${roomId}&peerId=${peerId}`, {method: 'POST'})
+    return fetch(`https://meet-ew2r.onrender.com/register-peer?roomId=${roomId}&peerId=${peerId}`, {method: 'POST'})
         .then(response => response.json());
 }
 
 function getPeersInRoom(roomId) {
-    return fetch(`http://localhost:3000/get-peers-in-room?roomId=${roomId}`)
+    return fetch(`https://meet-ew2r.onrender.com/get-peers-in-room?roomId=${roomId}`)
         .then(response => response.json());
 }
 
 function removePeer(roomId, peerId) {
-    return fetch(`http://localhost:3000/remove-peer?roomId=${roomId}&peerId=${peerId}`, {method: 'POST'})
+    return fetch(`https://meet-ew2r.onrender.com/remove-peer?roomId=${roomId}&peerId=${peerId}`, {method: 'POST'})
         .then(response => response.json());
 }
 
