@@ -1,3 +1,9 @@
+const peerConfig = {
+    iceServers: [
+        { urls: 'stun:stun.l.google.com:19302' }
+    ]
+};
+
 const PRE = "DELTA"
 const SUF = "MEET"
 var room_id;
@@ -16,7 +22,7 @@ function createRoom() {
         return;
     }
     room_id = PRE + room + SUF;
-    peer = new Peer()
+    peer = new Peer({ config: peerConfig });
     peer.on('open', (id) => {
         console.log("Peer Connected with ID: ", id)
         hideModal()
@@ -46,7 +52,7 @@ function joinRoom() {
     }
     room_id = PRE + room + SUF;
     hideModal()
-    peer = new Peer()
+    peer = new Peer({ config: peerConfig });
     peer.on('open', (id) => {
         console.log("Connected with Id: " + id)
         getUserMedia({ video: true, audio: true }, (stream) => {
